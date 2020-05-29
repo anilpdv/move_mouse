@@ -38,9 +38,16 @@ def moveMouse():
     randomWidth = random.randint(0, width)
     randomHeight = random.randint(0, height)
 
+    # logging randomwidth and random height
+    print(randomWidth, randomHeight)
+    if(randomHeight <= 100):
+        randomHeight = 196
+
     # moving mouse to the particular position
     pyautogui.moveTo(randomWidth, randomHeight, duration=1)
+    pyautogui.click(randomWidth, randomHeight)
+    pyautogui.write('hello world')
 
 
 # setting interval to call function evry t seconds
-t = set_interval(moveMouse, 40)
+t = set_interval(moveMouse, 10)
