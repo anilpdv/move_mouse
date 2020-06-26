@@ -4,6 +4,7 @@ import threading
 import random
 import sys
 import signal
+import requests
 
 
 # handles the signal
@@ -46,8 +47,11 @@ def moveMouse():
     # moving mouse to the particular position
     pyautogui.moveTo(randomWidth, randomHeight, duration=1)
     pyautogui.click(randomWidth, randomHeight)
-    pyautogui.write('hello world')
+
+    # request for quotes
+    pyautogui.typewrite('youre computer is hacked!\n',interval=1)
 
 
+print('[#] started the program')
 # setting interval to call function evry t seconds
-t = set_interval(moveMouse, 10)
+t = set_interval(moveMouse, 40)
